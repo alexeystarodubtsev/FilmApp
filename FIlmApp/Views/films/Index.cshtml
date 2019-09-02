@@ -1,0 +1,40 @@
+﻿@model IEnumerable<FIlmApp.Models.film>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@foreach (var item in Model)
+{
+    <div class="col-md-2" style="margin-top:10px">
+        <a href='@Url.Action("Details", "Films",  new { id = item.Id })'>
+            <img src=@Url.Content(item.ImageUrl) width="95%" />
+        </a>
+    </div>
+    
+
+}
+<!--
+<table class="table">
+
+
+
+    <tr>
+        @@foreach (var item in Model)
+        {
+
+            <td>
+
+                <a href='@@Url.Action("Details", "Films",  new { id = item.Id })'>
+                    <img src=@@Url.Content(item.ImageUrl) width="100" />
+                </a>
+
+            </td>
+
+
+        }
+    </tr>
+
+
+</table>
+-->
